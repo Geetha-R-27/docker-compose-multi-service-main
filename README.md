@@ -31,9 +31,9 @@ Stop and remove resources:
 docker-compose down -v
 
 ## 📁 Project Structure
-app/                 # Application source code
-reverse-proxy/       # Nginx configuration
-docker-compose.yml   # Service definitions
-.env                 # Environment variables
+app/                 
+reverse-proxy/      
+docker-compose.yml  
+.env                
 
 
