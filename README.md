@@ -1,28 +1,39 @@
-📘 Dockerized Multi-Service Application
+## Multi-Service Application with Docker Compose
 
-This project demonstrates a Docker Compose setup containing an App, MySQL Database, Redis Cache, and Nginx Reverse Proxy.
-It shows how to build a simple containerized multi-service architecture with health checks, named volumes, custom networks, and environment variables.
+This project demonstrates a clean Docker Compose setup with multiple services working together: an application, MySQL database, Redis cache, and an Nginx reverse proxy.
+It is designed to showcase containerization, service orchestration, networking, and environment-based configuration.
 
-🔧 Services Included
-1️⃣ Application (app)
+## 🔧 Services
+1. Application
+Main backend service
+Reads configuration from .env
+Connects to MySQL and Redis
 
-Main backend application
-Uses variables from .env
-Connected to Redis and MySQL
+2. MySQL
+Stores application data
+Credentials defined in .env
+Uses a persistent Docker volume
 
-2️⃣ MySQL Database (db)
+3. Redis
+In-memory cache service
+Internal-only (not exposed externally)
 
-Uses named volume for data persistence
-Credentials stored in .env
-Not exposed publicly
+5. Nginx Reverse Proxy
+Routes external traffic to the application
+Acts as the public entry point
 
-3️⃣ Redis Cache (cache)
+## 🚀 Running the Project
 
-Used for storing sessions or caching
-Internal service only
+Start all services:
+docker-compose up --build
 
-4️⃣ Nginx Reverse Proxy
+Stop and remove resources:
+docker-compose down -v
 
-Routes external traffic to the App
-Can be extended for SSL
+## 📁 Project Structure
+app/                 # Application source code
+reverse-proxy/       # Nginx configuration
+docker-compose.yml   # Service definitions
+.env                 # Environment variables
+
 
